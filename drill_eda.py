@@ -81,14 +81,17 @@ def main():
     print(f"✅ Data loaded! Shape: {df.shape}")
     print(f"Columns: {df.columns.tolist()}\n")
 
+    df['revenue'] = df['quantity'] * df['unit_price']
+    print(f"✅ Data loaded! Shape: {df.shape}")
+    print(f"Columns: {df.columns.tolist()}\n")
+
     # Task 1: Summary Statistics
     summary = compute_summary(df)
     print("\nSummary Statistics:\n", summary.round(2))
 
-    # Task 2: Distribution Plots → استخدمنا الأعمدة الرقمية الصحيحة
-    numeric_cols = ['quantity', 'unit_price']
-    print(f"\nPlotting distributions for: {numeric_cols}")
-    plot_distributions(df, numeric_cols)
+    # Task 2: Distribution Plots → 
+       
+    numeric_cols = ['quantity', 'unit_price', 'revenue']
 
     # Task 3: Correlation Heatmap
     plot_correlation(df)
